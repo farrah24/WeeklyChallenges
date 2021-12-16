@@ -7,37 +7,91 @@ namespace ChallengesWithTestsMark8
     {
         public int GetNextNumberDivisibleByN(int startNumber, int n)
         {
-            throw new NotImplementedException();
+            int i= startNumber;
+            while ((i % n) != 0)
+            {
+                i++;
+            }
+            return i;
+
+           
         }
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
-            throw new NotImplementedException();
+            for(int i=0; i< businesses.Length; i++)
+            {
+                if(businesses[i].TotalRevenue== 0)
+                {
+                    businesses[i].Name = "CLOSED";
+                }
+            }
+                
         }
 
         public bool IsAscendingOrder(int[] numbers)
         {
-            throw new NotImplementedException();
+            for(int i =0; i<numbers.Length-1; i++)
+            {
+                if(numbers[i] > numbers[i+1])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public int SumElementsThatFollowAnEven(int[] numbers)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                if ((numbers[i + 1] % 2) == 0)
+                {
+                    sum = sum + numbers[i];
+                }
+            }
+            return sum;
         }
 
         public string TurnWordsIntoSentence(string[] words)
         {
-            throw new NotImplementedException();
+            string sentence = words[0];
+            for(int i=1; i< words.Length; i++)
+            {
+                sentence = sentence + " ";
+            }
+            sentence = sentence + ".";
+            return sentence;
         }
+
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
-            throw new NotImplementedException();
+            double[] tree = new double[elements.Count / 4];
+            int j = 0;
+            for(int i= 0; i<elements.Count; i= i+3)
+            {
+                tree[j] = elements[i];
+                j++;
+            }
+            return tree;
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                for (int j = 0; j < nums.Length; j++)
+                {
+                    if (nums[i] + nums[j] == targetNumber)
+                    {
+                        return true;
+                    }
+                    {
+                        return false;
+                    }
+
+                }
+            }
         }
-    }
-}
